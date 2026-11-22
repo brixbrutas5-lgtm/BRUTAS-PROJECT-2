@@ -1,0 +1,1378 @@
+
+/* ==========================================================
+   KABANKALAN CATHOLIC COLLEGE, INC.
+   LUXURY UNIVERSITY WEBSITE DESIGN
+   Style: Elegant / Minimalist / Premium
+   Colors: Navy / Champagne Gold / Warm White
+========================================================== */
+
+/* =========================
+   1. GLOBAL VARIABLES
+========================= */
+
+:root {
+  --background-color: #ffffff;
+  --default-color: #596579;
+  --heading-color: #102b50;
+  --accent-color: #c6a15b;
+  --surface-color: #ffffff;
+  --contrast-color: #ffffff;
+
+  --nav-color: #102b50;
+  --nav-hover-color: #c6a15b;
+  --nav-mobile-background-color: #ffffff;
+  --nav-dropdown-background-color: #ffffff;
+  --nav-dropdown-color: #102b50;
+  --nav-dropdown-hover-color: #c6a15b;
+
+  --kcc-navy: #102b50;
+  --kcc-deep: #091b32;
+  --kcc-gold: #c6a15b;
+  --kcc-cream: #f7f5ef;
+  --kcc-light: #fafafa;
+  --kcc-text: #596579;
+  --kcc-border: #e9e5dc;
+
+  scroll-behavior: smooth;
+}
+
+/* =========================
+   2. GENERAL STYLING
+========================= */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Open Sans", sans-serif;
+  font-size: 15px;
+  line-height: 1.8;
+  color: var(--kcc-text);
+  background: #ffffff;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Raleway", sans-serif;
+  color: var(--kcc-navy);
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+a {
+  color: var(--kcc-navy);
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+a:hover {
+  color: var(--kcc-gold);
+}
+
+img {
+  max-width: 100%;
+}
+
+.section {
+  padding: 95px 0;
+  overflow: hidden;
+}
+
+.light-background {
+  background: var(--kcc-cream);
+}
+
+/* =========================
+   3. HEADER
+========================= */
+
+.header {
+  background: rgba(255, 255, 255, 0.97);
+  padding: 13px 0;
+  box-shadow: 0 2px 18px rgba(16, 43, 80, 0.06);
+  border-bottom: 1px solid rgba(198, 161, 91, 0.15);
+  z-index: 997;
+  transition: all 0.4s ease;
+}
+
+.header .container {
+  min-height: 62px;
+}
+
+.header .logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.header .logo img {
+  max-height: 53px;
+  width: auto;
+  object-fit: contain;
+}
+
+.header .logo h1,
+.header .logo .sitename {
+  font-family: "Raleway", sans-serif;
+  color: var(--kcc-navy);
+  font-size: 25px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  margin: 0;
+}
+
+/* =========================
+   4. NAVIGATION
+========================= */
+
+.navmenu ul {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.navmenu li {
+  position: relative;
+}
+
+.navmenu a {
+  display: flex;
+  align-items: center;
+  padding: 12px 13px;
+  font-family: "Poppins", sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--kcc-navy);
+  white-space: nowrap;
+  transition: 0.3s;
+}
+
+.navmenu a:hover,
+.navmenu a.active,
+.navmenu li:hover > a {
+  color: var(--kcc-gold);
+}
+
+.navmenu a.active {
+  position: relative;
+}
+
+.navmenu a.active::after {
+  content: "";
+  position: absolute;
+  bottom: 3px;
+  left: 13px;
+  width: 22px;
+  height: 2px;
+  background: var(--kcc-gold);
+}
+
+/* DROPDOWN */
+
+.navmenu .dropdown ul {
+  display: block;
+  position: absolute;
+  top: 140%;
+  left: 0;
+  min-width: 225px;
+  padding: 12px 0;
+  background: #ffffff;
+  border: 1px solid var(--kcc-border);
+  border-top: 3px solid var(--kcc-gold);
+  box-shadow: 0 12px 35px rgba(16, 43, 80, 0.12);
+  border-radius: 0 0 8px 8px;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.3s;
+  z-index: 99;
+}
+
+.navmenu .dropdown:hover > ul {
+  top: 100%;
+  opacity: 1;
+  visibility: visible;
+}
+
+.navmenu .dropdown ul a {
+  padding: 10px 20px;
+  font-size: 12px;
+}
+
+.navmenu .dropdown ul a:hover {
+  background: var(--kcc-cream);
+}
+
+.navmenu .dropdown ul .dropdown ul {
+  top: 0;
+  left: 100%;
+}
+
+/* HEADER BUTTON */
+
+.btn-getstarted {
+  display: inline-block;
+  padding: 12px 23px;
+  background: var(--kcc-navy);
+  color: #ffffff;
+  border: 1px solid var(--kcc-navy);
+  font-family: "Poppins", sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  border-radius: 3px;
+  transition: all 0.3s ease;
+}
+
+.btn-getstarted:hover {
+  background: var(--kcc-gold);
+  border-color: var(--kcc-gold);
+  color: var(--kcc-deep);
+}
+
+.mobile-nav-toggle {
+  color: var(--kcc-navy);
+  font-size: 30px;
+  cursor: pointer;
+}
+
+/* =========================
+   5. HERO SECTION
+========================= */
+
+.hero {
+  width: 100%;
+  min-height: 690px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  background: var(--kcc-deep);
+}
+
+.hero img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  z-index: 1;
+  animation: heroZoom 18s ease-in-out infinite alternate;
+}
+
+@keyframes heroZoom {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.08);
+  }
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(9, 27, 50, 0.88) 0%,
+    rgba(9, 27, 50, 0.65) 50%,
+    rgba(9, 27, 50, 0.20) 100%
+  );
+  z-index: 2;
+}
+
+.hero .container {
+  position: relative;
+  z-index: 3;
+  padding-top: 65px;
+  padding-bottom: 65px;
+}
+
+.hero h2 {
+  max-width: 850px;
+  color: #ffffff;
+  font-size: clamp(35px, 5vw, 62px);
+  font-weight: 800;
+  line-height: 1.17;
+  letter-spacing: -1px;
+  margin-bottom: 24px;
+}
+
+.hero p {
+  color: #ffffff;
+  font-family: "Poppins", sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  margin-bottom: 10px;
+}
+
+.hero p:last-of-type {
+  color: #e4c98e;
+  font-family: "Raleway", sans-serif;
+  font-size: 16px;
+  font-style: italic;
+  letter-spacing: 1px;
+}
+
+.hero .btn-get-started {
+  display: inline-block;
+  padding: 14px 32px;
+  background: var(--kcc-gold);
+  color: var(--kcc-deep);
+  border: 1px solid var(--kcc-gold);
+  border-radius: 3px;
+  font-family: "Poppins", sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: 0.3s;
+}
+
+.hero .btn-get-started:hover {
+  background: #ffffff;
+  border-color: #ffffff;
+  color: var(--kcc-navy);
+  transform: translateY(-3px);
+}
+
+/* =========================
+   6. ABOUT SECTION
+========================= */
+
+.about {
+  padding: 100px 0;
+  background: #ffffff;
+}
+
+.about .row {
+  align-items: center;
+}
+
+.about img {
+  width: 100%;
+  max-height: 440px;
+  object-fit: contain;
+  padding: 25px;
+  background: var(--kcc-cream);
+  border-radius: 4px;
+}
+
+.about h3 {
+  font-size: 34px;
+  font-weight: 800;
+  line-height: 1.35;
+  margin-bottom: 22px;
+}
+
+.about .fst-italic {
+  color: var(--kcc-gold);
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.about p {
+  line-height: 1.9;
+}
+
+.about ul {
+  list-style: none;
+  padding: 0;
+  margin: 25px 0;
+}
+
+.about ul li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 9px 0;
+  color: var(--kcc-text);
+}
+
+.about ul i {
+  color: var(--kcc-gold);
+  font-size: 21px;
+  flex-shrink: 0;
+}
+
+.about .read-more {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--kcc-navy);
+  font-family: "Poppins", sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  border-bottom: 1px solid var(--kcc-gold);
+  padding-bottom: 6px;
+}
+
+.about .read-more:hover {
+  color: var(--kcc-gold);
+  gap: 15px;
+}
+
+/* =========================
+   7. COUNTS SECTION
+========================= */
+
+.counts {
+  background: var(--kcc-cream);
+  padding: 70px 0;
+  border-top: 1px solid var(--kcc-border);
+  border-bottom: 1px solid var(--kcc-border);
+}
+
+.stats-item {
+  padding: 15px;
+  text-align: center;
+}
+
+.stats-item span {
+  display: block;
+  color: var(--kcc-navy);
+  font-family: "Raleway", sans-serif;
+  font-size: 45px;
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 10px;
+}
+
+.stats-item p {
+  color: var(--kcc-gold);
+  font-family: "Poppins", sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin: 0;
+}
+
+/* =========================
+   8. WHY CHOOSE KCC
+========================= */
+
+.why-us {
+  background: #ffffff;
+  padding: 100px 0;
+}
+
+.why-box {
+  height: 100%;
+  padding: 40px 32px;
+  background: var(--kcc-navy);
+  border-radius: 4px;
+  color: #ffffff;
+  position: relative;
+  overflow: hidden;
+}
+
+.why-box::after {
+  content: "";
+  position: absolute;
+  width: 170px;
+  height: 170px;
+  border: 1px solid rgba(198, 161, 91, 0.35);
+  border-radius: 50%;
+  right: -65px;
+  bottom: -70px;
+}
+
+.why-box h3 {
+  color: #ffffff;
+  font-size: 30px;
+  margin-bottom: 20px;
+}
+
+.why-box p {
+  color: rgba(255,255,255,0.82);
+  line-height: 1.9;
+}
+
+.why-box .more-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 22px;
+  background: var(--kcc-gold);
+  color: var(--kcc-deep);
+  border-radius: 3px;
+  font-size: 12px;
+  font-weight: 700;
+  margin-top: 15px;
+}
+
+.why-box .more-btn:hover {
+  background: #ffffff;
+  color: var(--kcc-navy);
+}
+
+.why-us .icon-box {
+  background: var(--kcc-cream);
+  border: 1px solid var(--kcc-border);
+  border-radius: 4px;
+  padding: 30px 18px;
+  height: 100%;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.why-us .icon-box:hover {
+  background: #ffffff;
+  border-color: var(--kcc-gold);
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px rgba(16, 43, 80, 0.08);
+}
+
+.why-us .icon-box i {
+  color: var(--kcc-gold);
+  font-size: 38px;
+  margin-bottom: 18px;
+}
+
+.why-us .icon-box h4 {
+  color: var(--kcc-navy);
+  font-size: 17px;
+  margin-bottom: 12px;
+}
+
+.why-us .icon-box p {
+  color: var(--kcc-text);
+  font-size: 13px;
+  line-height: 1.8;
+  margin: 0;
+}
+
+/* =========================
+   9. FEATURES SECTION
+========================= */
+
+.features {
+  padding: 85px 0;
+  background: var(--kcc-cream);
+}
+
+.features-item {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  padding: 22px 18px;
+  background: #ffffff;
+  border: 1px solid var(--kcc-border);
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.features-item:hover {
+  border-color: var(--kcc-gold);
+  box-shadow: 0 10px 25px rgba(16, 43, 80, 0.07);
+  transform: translateY(-4px);
+}
+
+.features-item i {
+  color: var(--kcc-gold) !important;
+  font-size: 28px;
+  margin-right: 15px;
+}
+
+.features-item h3 {
+  font-size: 14px;
+  margin: 0;
+  font-weight: 700;
+}
+
+.features-item h3 a {
+  color: var(--kcc-navy);
+}
+
+.features-item h3 a:hover {
+  color: var(--kcc-gold);
+}
+
+/* =========================
+   10. SECTION TITLES
+========================= */
+
+.section-title {
+  text-align: center;
+  padding-bottom: 45px;
+}
+
+.section-title h2 {
+  display: inline-block;
+  color: var(--kcc-gold);
+  font-family: "Poppins", sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.section-title p {
+  color: var(--kcc-navy);
+  font-family: "Raleway", sans-serif;
+  font-size: 36px;
+  font-weight: 800;
+  line-height: 1.3;
+  margin: 0;
+}
+
+/* =========================
+   11. COURSES / PROGRAMS
+========================= */
+
+.courses {
+  padding: 100px 0;
+  background: #ffffff;
+}
+
+.course-item {
+  height: 100%;
+  background: #ffffff;
+  border: 1px solid var(--kcc-border);
+  border-radius: 5px;
+  overflow: hidden;
+  transition: all 0.35s ease;
+}
+
+.course-item:hover {
+  transform: translateY(-7px);
+  box-shadow: 0 15px 35px rgba(16, 43, 80, 0.10);
+  border-color: rgba(198, 161, 91, 0.6);
+}
+
+.course-item > img {
+  width: 100%;
+  height: 235px;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.course-item:hover > img {
+  transform: scale(1.04);
+}
+
+.course-content {
+  padding: 25px;
+}
+
+.course-content .category {
+  display: inline-block;
+  background: var(--kcc-cream);
+  color: var(--kcc-navy);
+  padding: 6px 12px;
+  border-left: 2px solid var(--kcc-gold);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  margin: 0;
+}
+
+.course-content .price {
+  color: var(--kcc-gold);
+  font-size: 15px;
+  font-weight: 800;
+  margin: 0;
+}
+
+.course-content h3 {
+  font-size: 21px;
+  margin: 17px 0 12px;
+}
+
+.course-content h3 a {
+  color: var(--kcc-navy);
+}
+
+.course-content h3 a:hover {
+  color: var(--kcc-gold);
+}
+
+.course-content .description {
+  color: var(--kcc-text);
+  font-size: 13px;
+  line-height: 1.9;
+}
+
+.course-content .trainer {
+  border-top: 1px solid var(--kcc-border);
+  padding-top: 17px;
+  margin-top: 20px;
+}
+
+.trainer-link {
+  color: var(--kcc-navy);
+  font-family: "Poppins", sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.trainer-link:hover {
+  color: var(--kcc-gold);
+}
+
+/* =========================
+   12. KCC COMMUNITY
+========================= */
+
+.trainers-index {
+  background: var(--kcc-cream);
+  padding: 100px 0;
+}
+
+.trainers-index .member {
+  width: 100%;
+  height: 100%;
+  background: #ffffff;
+  border: 1px solid var(--kcc-border);
+  border-radius: 5px;
+  overflow: hidden;
+  transition: all 0.35s ease;
+}
+
+.trainers-index .member:hover {
+  transform: translateY(-7px);
+  box-shadow: 0 15px 35px rgba(16, 43, 80, 0.10);
+}
+
+.trainers-index .member img {
+  width: 100%;
+  height: 255px;
+  object-fit: cover;
+}
+
+.trainers-index .member-content {
+  padding: 27px 23px;
+  text-align: center;
+}
+
+.trainers-index .member h4 {
+  color: var(--kcc-navy);
+  font-size: 20px;
+  margin-bottom: 8px;
+}
+
+.trainers-index .member span {
+  display: block;
+  color: var(--kcc-gold);
+  font-family: "Poppins", sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 14px;
+}
+
+.trainers-index .member p {
+  color: var(--kcc-text);
+  font-size: 13px;
+  line-height: 1.8;
+  margin: 0;
+}
+
+/* =========================
+   13. CAMPUS LIFE
+========================= */
+
+#campus-life {
+  padding: 100px 0;
+  background: #ffffff;
+}
+
+#campus-life .row > div {
+  padding: 32px;
+  background: var(--kcc-cream);
+  border-left: 3px solid var(--kcc-gold);
+  border-radius: 3px;
+  transition: all 0.3s ease;
+}
+
+#campus-life .row > div:hover {
+  box-shadow: 0 12px 30px rgba(16, 43, 80, 0.07);
+  transform: translateY(-4px);
+}
+
+#campus-life h3 {
+  color: var(--kcc-navy);
+  font-size: 23px;
+  margin-bottom: 15px;
+}
+
+#campus-life p {
+  font-size: 14px;
+  line-height: 1.9;
+}
+
+#campus-life .read-more {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--kcc-navy);
+  border-bottom: 1px solid var(--kcc-gold);
+  padding-bottom: 5px;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+#campus-life .read-more:hover {
+  color: var(--kcc-gold);
+  gap: 13px;
+}
+
+/* =========================
+   14. FOOTER
+========================= */
+
+.footer {
+  background: var(--kcc-deep);
+  color: rgba(255,255,255,0.75);
+  font-size: 13px;
+}
+
+.footer .footer-top {
+  padding-top: 70px;
+  padding-bottom: 45px;
+}
+
+.footer .logo .sitename {
+  color: #ffffff;
+  font-family: "Raleway", sans-serif;
+  font-size: 20px;
+  font-weight: 800;
+  line-height: 1.5;
+}
+
+.footer h4 {
+  color: var(--kcc-gold);
+  font-size: 15px;
+  font-weight: 700;
+  margin-bottom: 22px;
+}
+
+.footer p {
+  line-height: 1.9;
+}
+
+.footer .footer-contact p {
+  margin-bottom: 8px;
+}
+
+.footer .footer-links ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.footer .footer-links ul li {
+  padding: 7px 0;
+}
+
+.footer .footer-links ul a {
+  color: rgba(255,255,255,0.72);
+  transition: 0.3s;
+}
+
+.footer .footer-links ul a:hover {
+  color: var(--kcc-gold);
+  padding-left: 5px;
+}
+
+.footer .social-links a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 39px;
+  height: 39px;
+  margin-right: 10px;
+  border: 1px solid rgba(198, 161, 91, 0.45);
+  border-radius: 50%;
+  color: #ffffff;
+  font-size: 17px;
+  transition: 0.3s;
+}
+
+.footer .social-links a:hover {
+  background: var(--kcc-gold);
+  border-color: var(--kcc-gold);
+  color: var(--kcc-deep);
+}
+
+.footer .read-more {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--kcc-gold);
+  border-bottom: 1px solid var(--kcc-gold);
+  padding-bottom: 5px;
+  font-weight: 700;
+}
+
+.footer .read-more:hover {
+  color: #ffffff;
+}
+
+.footer .copyright {
+  border-top: 1px solid rgba(255,255,255,0.13);
+  padding: 25px 0;
+}
+
+.footer .copyright p {
+  color: #ffffff;
+  margin: 0 0 5px;
+}
+
+.footer .copyright .sitename {
+  color: var(--kcc-gold);
+}
+
+.footer .credits {
+  color: rgba(255,255,255,0.65);
+  font-size: 12px;
+}
+
+/* =========================
+   15. SCROLL TO TOP
+========================= */
+
+.scroll-top {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  width: 44px;
+  height: 44px;
+  background: var(--kcc-gold);
+  color: var(--kcc-deep);
+  border-radius: 50%;
+  font-size: 25px;
+  z-index: 996;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.3s;
+}
+
+.scroll-top.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.scroll-top:hover {
+  background: var(--kcc-navy);
+  color: #ffffff;
+}
+
+/* =========================
+   16. PRELOADER
+========================= */
+
+#preloader {
+  position: fixed;
+  inset: 0;
+  background: #ffffff;
+  z-index: 9999;
+}
+
+#preloader:before {
+  content: "";
+  position: fixed;
+  width: 46px;
+  height: 46px;
+  top: calc(50% - 23px);
+  left: calc(50% - 23px);
+  border: 4px solid #eee;
+  border-top-color: var(--kcc-gold);
+  border-bottom-color: var(--kcc-navy);
+  border-radius: 50%;
+  animation: kcc-loader 1s linear infinite;
+}
+
+@keyframes kcc-loader {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* =========================
+   17. RESPONSIVE DESIGN
+========================= */
+
+@media (max-width: 1199px) {
+  .navmenu ul {
+    display: none;
+  }
+
+  .mobile-nav-toggle {
+    display: block;
+  }
+
+  .mobile-nav-active {
+    overflow: hidden;
+  }
+
+  .mobile-nav-active .navmenu > ul {
+    display: block;
+    position: fixed;
+    inset: 75px 15px 15px 15px;
+    padding: 15px 0;
+    background: #ffffff;
+    border: 1px solid var(--kcc-border);
+    border-radius: 5px;
+    box-shadow: 0 12px 35px rgba(16, 43, 80, 0.15);
+    overflow-y: auto;
+    z-index: 9998;
+  }
+
+  .mobile-nav-active .navmenu a {
+    padding: 13px 20px;
+  }
+
+  .mobile-nav-active .navmenu a.active::after {
+    display: none;
+  }
+
+  .mobile-nav-active .navmenu .dropdown ul {
+    display: none;
+    position: static;
+    opacity: 1;
+    visibility: visible;
+    box-shadow: none;
+    border: 0;
+    padding-left: 20px;
+    min-width: auto;
+  }
+
+  .mobile-nav-active .navmenu .dropdown > .dropdown-active {
+    display: block !important;
+  }
+
+  .header .btn-getstarted {
+    display: none;
+  }
+}
+
+@media (max-width: 991px) {
+  .section {
+    padding: 75px 0;
+  }
+
+  .hero {
+    min-height: 590px;
+  }
+
+  .hero h2 {
+    font-size: 43px;
+  }
+
+  .about h3 {
+    font-size: 29px;
+  }
+
+  .why-us .icon-box {
+    min-height: 220px;
+  }
+
+  .section-title p {
+    font-size: 31px;
+  }
+}
+
+@media (max-width: 767px) {
+  .header .logo img {
+    max-height: 43px;
+  }
+
+  .header .logo h1,
+  .header .logo .sitename {
+    font-size: 21px;
+  }
+
+  .hero {
+    min-height: 530px;
+  }
+
+  .hero h2 {
+    font-size: 34px;
+  }
+
+  .hero p {
+    font-size: 15px;
+  }
+
+  .about {
+    padding: 70px 0;
+  }
+
+  .about img {
+    max-height: 320px;
+  }
+
+  .stats-item span {
+    font-size: 36px;
+  }
+
+  .section-title p {
+    font-size: 27px;
+  }
+
+  .course-item > img {
+    height: 220px;
+  }
+
+  .trainers-index .member img {
+    height: 230px;
+  }
+
+  .footer .footer-top {
+    padding-top: 50px;
+  }
+}
+
+@media (max-width: 575px) {
+  .section {
+    padding: 60px 0;
+  }
+
+  .header {
+    padding: 10px 0;
+  }
+
+  .header .logo img {
+    max-height: 38px;
+  }
+
+  .header .logo h1,
+  .header .logo .sitename {
+    font-size: 18px;
+    letter-spacing: 1px;
+  }
+
+  .hero {
+    min-height: 490px;
+  }
+
+  .hero h2 {
+    font-size: 29px;
+    letter-spacing: 0;
+  }
+
+  .hero p {
+    font-size: 14px;
+  }
+
+  .hero p:last-of-type {
+    font-size: 13px;
+  }
+
+  .hero .btn-get-started {
+    padding: 12px 22px;
+    font-size: 11px;
+  }
+
+  .about h3 {
+    font-size: 25px;
+  }
+
+  .section-title p {
+    font-size: 24px;
+  }
+
+  .why-box {
+    padding: 30px 23px;
+  }
+
+  .why-box h3 {
+    font-size: 26px;
+  }
+
+  #campus-life .row > div {
+    padding: 24px;
+  }
+
+  .footer .footer-top {
+    padding-top: 45px;
+  }
+}
+
+/* ========================================
+   KCC OUR HISTORY SECTION
+======================================== */
+
+#history.history-section {
+  background-color: #102B50 !important;
+  color: #ffffff !important;
+  padding: 80px 0;
+}
+
+/* OUR HISTORY label */
+#history .section-label {
+  display: inline-block;
+  color: #C6A15B !important;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  margin-bottom: 15px;
+}
+
+/* Main heading */
+#history h2 {
+  color: #ffffff !important;
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 25px;
+}
+
+/* Paragraph text */
+#history p {
+  color: #E8EDF5 !important;
+  font-size: 16px;
+  line-height: 1.9;
+  margin-bottom: 18px;
+}
+
+/* Back to Home link */
+#history .read-more {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: #C6A15B !important;
+  font-weight: 700;
+  text-decoration: none;
+  margin-top: 15px;
+}
+
+#history .read-more span,
+#history .read-more i {
+  color: #C6A15B !important;
+}
+
+#history .read-more:hover,
+#history .read-more:hover span,
+#history .read-more:hover i {
+  color: #ffffff !important;
+}
+
+/* History image */
+#history .history-image {
+  width: 100%;
+  height: 420px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  #history h2 {
+    font-size: 28px;
+  }
+
+  #history .history-image {
+    height: 280px;
+  }
+}
+
+/* Main website background */
+body {
+  background-color: #EAF6FF !important;
+}
+
+/* All sections */
+body .section,
+body section.section,
+body .section-bg {
+  background-color: #EAF6FF !important;
+}
+
+/* Keep headings dark blue */
+body .section h1,
+body .section h2,
+body .section h3,
+body .section h4,
+body .section h5 {
+  color: #102B50;
+}
+
+/* Paragraphs */
+body .section p,
+body .section li {
+  color: #52677F;
+}
+
+/* Section labels */
+body .section .section-label {
+  color: #C6A15B;
+}
+
+/* Keep cards white for contrast */
+.course-item,
+.course-card,
+.card,
+.trainer-item,
+.event-item {
+  background-color: #FFFFFF !important;
+}
+
+/* Keep header white */
+#header {
+  background-color: #FFFFFF !important;
+}
+
+/* Keep footer dark navy */
+#footer {
+  background-color: #102B50 !important;
+}
+
+/* KCC LOGO - REMOVE BACKGROUND */
+#about .about-img,
+#about .about-image,
+#about .col-lg-6:has(img) {
+    background: transparent !important;
+    box-shadow: none !important;
+}
+
+/* Logo image */
+#about img {
+    background: transparent !important;
+    mix-blend-mode: multiply;
+    object-fit: contain;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+
+/* REMOVE WHITE BACKGROUND FROM ALL KCC LOGOS */
+
+.kcc-logo-container,
+.kcc-logo,
+.kcc-logo img,
+img[src*="kcc-logo"],
+img[src*="kcc"],
+.logo img,
+.section img.kcc-logo {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+/* ALL KCC LOGOS */
+img[src*="kcc-logo"],
+img[src*="kcc"] {
+    object-fit: contain;
+    mix-blend-mode: multiply;
+}
+
+/* LOGO CONTAINER */
+.kcc-logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
